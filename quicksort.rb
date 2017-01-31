@@ -54,20 +54,29 @@
 def quicksort(array, lo, hi)
   # TODO: programmer golf solution
   # array. >= 2 ? quicksort(array[0..(array.length/2).floor]) + quicksort(array[(array.length/2).floor..array.length]) : ret + array[0]
+  #puts 'quicksort:~~~~~~~~~~~~~~~~'
+  #puts array.to_s
+  #puts lo
+  #puts hi
+  #puts '~~~~~~~~~~~~~~~~~~~~~~~~~~'
   if lo < hi
     p = partition(array, lo, hi)
-    quicksort(array, lo, p)
+    quicksort(array, lo, p - 1)
     quicksort(array, p + 1, hi)
-  end 
+  end
+  return array 
 end
 
 def partition(array, lo, hi)
   pivot = array[hi]
   i = lo
   (lo..hi-1).each_with_index do |j|
-    puts hi
-    puts j
-    puts pivot
+    #puts 'Parition:~~~~~~~~~~~~~~~~'
+    #puts array.to_s
+    #puts lo
+    #puts hi
+    #puts j
+    #puts '~~~~~~~~~~~~~~~~~~~~~~~~~'
     if array[j] <= pivot
       # swap A[i] with A[j]
       array[i], array[j] = array[j], array[i]
@@ -82,8 +91,8 @@ end
 test_array_1 = [11, 22, -11, 55, 444, -111, 2000, -100, 1]
 # print original array
 puts "Original Array:" 
-puts test_array_1
+puts test_array_1.to_s
 # solution
 puts "Sorted Array:"
-puts quicksort(test_array_1, 0, test_array_1.length - 1)
+puts quicksort(test_array_1, 0, test_array_1.length - 1).to_s
 
