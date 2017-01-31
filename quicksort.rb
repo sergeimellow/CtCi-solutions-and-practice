@@ -30,7 +30,7 @@
 # ways; the choice of specific implementation schemes greatly affects the
 # algorithm's performance.
 
-# Psuedo Code:
+# Pseudo Code:
 
 # algorithm quicksort(A, lo, hi) is
 #  if lo < hi then
@@ -65,6 +65,9 @@ def partition(array, lo, hi)
   pivot = array[hi]
   i = lo
   (lo..hi-1).each_with_index do |j|
+    puts hi
+    puts j
+    puts pivot
     if array[j] <= pivot
       # swap A[i] with A[j]
       array[i], array[j] = array[j], array[i]
@@ -82,5 +85,5 @@ puts "Original Array:"
 puts test_array_1
 # solution
 puts "Sorted Array:"
-puts quicksort(test_array_1, 1, test_array_1.length)
+puts quicksort(test_array_1, 0, test_array_1.length - 1)
 
