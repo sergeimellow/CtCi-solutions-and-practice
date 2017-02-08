@@ -1,36 +1,38 @@
-# Bubble sort, sometimes referred to as sinking sort, is a simple sorting
-# algorithm that repeatedly steps through the list to be sorted, compares each
-# pair of adjacent items and swaps them if they are in the wrong order. The pass
-# through the list is repeated until no swaps are needed, which indicates that
-# the list is sorted. The algorithm, which is a comparison sort, is named for
-# the way smaller or larger elements "bubble" to the top of the list. Although
-# the algorithm is simple, it is too slow and impractical for most problems even
-# when compared to insertion sort.[1] It can be practical if the input is usually
-# in sorted order but may occasionally have some out-of-order elements nearly in
-# position.
-
-# Pseudocode implementation
-#The algorithm can be expressed as (0-based array):
-
-# procedure bubbleSort( A : list of sortable items )
-#    n = length(A)
-#    repeat 
-#      swapped = false
-#      for i = 1 to n-1 inclusive do
-#        /* if this pair is out of order */
-#        if A[i-1] > A[i] then
-#          /* swap them and remember something changed */
-#          swap( A[i-1], A[i] )
-#          swapped = true
-#        end if
-#      end for
-#    until not swapped
-# end procedure
-
-# Worst-case performance      O(n^{2})} O(n^{2})
-# Best-case performance	      O(n)} O(n)
-# Average performance	      O(n^{2})} O(n^{2})
-# Worst-case space complexity O(1)} O(1) auxiliary
+###################################################################################
+# Bubble sort, sometimes referred to as sinking sort, is a simple sorting         #
+# algorithm that repeatedly steps through the list to be sorted, compares each    #
+# pair of adjacent items and swaps them if they are in the wrong order. The pass  #
+# through the list is repeated until no swaps are needed, which indicates that    #
+# the list is sorted. The algorithm, which is a comparison sort, is named for     # 
+# the way smaller or larger elements "bubble" to the top of the list. Although    #
+# the algorithm is simple, it is too slow and impractical for most problems even  #
+# when compared to insertion sort.[1] It can be practical if the input is usually #
+# in sorted order but may occasionally have some out-of-order elements nearly in  #
+# position.  -Wikipedia                                                           #
+###################################################################################
+#                                                                                 #
+# Pseudocode implementation                                                       #
+# The algorithm can be expressed as (0-based array):                              #
+#                                                                                 #
+# procedure bubbleSort( A : list of sortable items )                              #
+#    n = length(A)                                                                #
+#    repeat                                                                       #
+#      swapped = false                                                            #
+#      for i = 1 to n-1 inclusive do                                              #
+#        /* if this pair is out of order */                                       #
+#        if A[i-1] > A[i] then                                                    #
+#          /* swap them and remember something changed */                         #
+#          swap( A[i-1], A[i] )                                                   #  
+#          swapped = true                                                         #  
+#        end if                                                                   #
+#      end for                                                                    #
+#    until not swapped                                                            #
+# end procedure                                                                   #
+###################################################################################
+# Worst-case performance      O(n^2)
+# Best-case performance	      O(n)
+# Average performance	      O(n^2)
+# Worst-case space complexity O(1)
 
 def bubble_sort array
   n = array.length
@@ -48,7 +50,8 @@ def bubble_sort array
   end
   return array
 end
-
+###################################################################################
+# Test Example 
 arr = []
 # unsorted array of length 10 with random numbers between 0-99
 10.times{ arr << rand(100) }
