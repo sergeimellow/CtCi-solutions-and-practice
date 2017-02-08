@@ -10,7 +10,6 @@
 # in sorted order but may occasionally have some out-of-order elements nearly in  #
 # position.  -Wikipedia                                                           #
 ###################################################################################
-#                                                                                 #
 # Pseudocode implementation                                                       #
 # The algorithm can be expressed as (0-based array):                              #
 #                                                                                 #
@@ -29,11 +28,12 @@
 #    until not swapped                                                            #
 # end procedure                                                                   #
 ###################################################################################
-# Worst-case performance      O(n^2)
-# Best-case performance	      O(n)
-# Average performance	      O(n^2)
-# Worst-case space complexity O(1)
-
+# Worst-case performance      O(n^2)                                              #
+# Best-case performance	      O(n)                                                #
+# Average performance	      O(n^2)                                              #
+# Worst-case space complexity O(1)                                                #
+###################################################################################
+#  Bubble Sort Implementation
 def bubble_sort array
   n = array.length
   swapped = true
@@ -50,10 +50,10 @@ def bubble_sort array
   end
   return array
 end
-###################################################################################
-# Test Example 
+
+# Testing bubble sort with random array
 arr = []
-# unsorted array of length 10 with random numbers between 0-99
+# creates unsorted array of length 10 with random numbers between 0-99
 10.times{ arr << rand(100) }
 puts "unsorted array:" + arr.to_s + "\nsorting in progress..."
 arr = bubble_sort(arr)
