@@ -12,7 +12,7 @@
 # zero-based and swap is used to exchange two elements of the array. Movement 'down'  #
 # means from the root towards the leaves, or from lower indices to higher. Note that  #
 # during the sort, the largest element is at the root of the heap at a[0], while at   #
-# the end of the sort, the largest element is in a[end].                              #  
+# the end of the sort, the largest element is in a[end].                              # 
 #######################################################################################
 # procedure heapsort(a, count) is                                                     #
 #   input: an unordered array a of length count                                       #
@@ -81,6 +81,17 @@
 #######################################################################################
 #
 # Ruby Implementation
+#
+# helper functions from description
+ def i_parent i
+   # floor functions map a real number to the smallest leading integer.
+   ((i-1) / 2).floor
+ end
+
+ # TODO: write in ruby
+ # iLeftChild(i)  = 2*i + 1
+ # TODO:write in ruby
+ # iRightChild(i) = 2*i + 2
 def heapsort(a, count) is
   # input =: an unordered array a of length count
   # Build the heap in array a so that largest value is at the root
@@ -99,8 +110,27 @@ def heapsort(a, count) is
     # the heap size is reduced by one
     ending = ending - 1
     # the swap ruined the heap property, so restore it
+    # TODO: implement
     # siftDown(a, 0, end)
   end
 end
+
+# TODO: in progrss
+def heapify(a, count)
+  # (start is assigned the index in 'a' of the last parent node)
+  # (the last element in a 0-based array is at index count-1; find the parent of that
+  # element)
+  # start ← iParent(count-1)
+
+  while start >= 0 do
+   # (sift down the node at index 'start' to the proper place such that all nodes
+   # below the start index are in heap order)
+   # siftDown(a, start, count - 1)
+   # (go to the next parent node)
+   start = start - 1
+   # (after sifting down the root all nodes/elements are in heap order)
+  end
+end
+
 
 
