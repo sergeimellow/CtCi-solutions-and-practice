@@ -6,12 +6,13 @@
 # Output: True (permutations: "taco cat". "atco cta". etc.)
 
 def palindrome_permutation str
-  str_1 = str.chars.sort.join
-  str_2 = str.chars.sort.join.reverse
-  for i in 0..str.length/2
-    return false if str[i] != str[str.length-i-1]
+  str_1 = str.downcase.chars.sort.join
+  str_2 = str.downcase.chars.sort.join.reverse
+  length = str.length
+  for i in 0..length/2
+    return false if str_1[i] != str_2[length-i-1]
   end
   return true
 end
 
-palindrome_permutation("Tact Coa")
+puts palindrome_permutation("Tact Coa")
