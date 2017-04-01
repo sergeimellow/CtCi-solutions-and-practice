@@ -4,9 +4,9 @@
 #    (we can ignore looping till the last char because when we get to it we
 #     won't need to compare it to anything at that point)
 # 2) during each step check if str[index - 1] is included in the substring
-#    of str[index] to end of string
-# 3) return false false if an inclusion is found in the loop
-# 4) return true if loop finishes without finding inclusion
+#    of str[index] to str[str.length-1] (end of string)
+# 3) return false if an inclusion is found in a given sub string
+# 4) return true if loop finishes without finding any inclusions
 
 def is_uniq(str)
   str[0..str.length - 2].each_char.with_index(1) do |char, index|
