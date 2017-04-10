@@ -75,18 +75,17 @@ end
 # end
 
 def remove_dups_with_buffer(linked_list)
-  head = linked_list.head
   dup_arr = []
   prev_node = nil
-  while head != nil do
+  linked_list.each do |head|
     if dup_arr.include? head.data
       prev_node.next = head.next
     else
       dup_arr.push(head.data)
+      prev_node = head
     end
-    head = head.next
   end
-  puts dup_arr.to_s
+  linked_list
 end
 
 # def remove_dups_no_buffer(linked_list)
@@ -94,10 +93,9 @@ end
 # end
 
 test_input_1 = SinglyLinkedList.new(1)
-# generate a random linked with 10 elements
+# generate a random linked list with 10 elements
 10.times do |x|
-  node = Node.new(rand(1..5))
-  test_input_1.push_bottom(node)
+  test_input_1.push_bottom(rand(1..5))
 end
 
 # make a copy of generated test list
