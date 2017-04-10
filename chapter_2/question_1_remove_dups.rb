@@ -1,7 +1,9 @@
 require 'pp'
+
 # Remove Dups: Write code to remove duplicates from an unsorted linked list.
+
 # FOLLOW UP
-#How would you solve this problem if a temporary buffer is not allowed?
+# How would you solve this problem if a temporary buffer is not allowed?
 
 # possibly modified but original implementation from:
 # https://github.com/careercup/ctci/blob/master/ruby/lib/data-structures/linked-list/node.rb
@@ -62,7 +64,7 @@ class SinglyLinkedList
   end
 end
 
-# started implementing linked list... grabbed existing implementation.
+# started implementing linked list then grabbed an existing implementation...
 # class Node
 #   attr_accessor :node, :next
 #   def initialize(node)
@@ -74,6 +76,7 @@ end
 #   end
 # end
 
+# initial solution
 def remove_dups_with_buffer(linked_list)
   dup_arr = []
   prev_node = nil
@@ -88,17 +91,19 @@ def remove_dups_with_buffer(linked_list)
   linked_list
 end
 
+# follow up question solution
 # def remove_dups_no_buffer(linked_list)
 #   linked_list
 # end
 
+# test linked list data for initial solution
 test_input_1 = SinglyLinkedList.new(1)
 # generate a random linked list with 10 elements
 10.times do |x|
   test_input_1.push_bottom(rand(1..5))
 end
 
-# make a copy of generated test list
+# test linked list data for follow up solution
 # test_input_2 = test_input_1.dup
 
 # initial problem
